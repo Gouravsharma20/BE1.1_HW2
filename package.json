@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "mongoose": "^9.6.2"
+  },
+  "name": "be1.1_hw2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
