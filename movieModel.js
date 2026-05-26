@@ -1,12 +1,12 @@
 const mongoose = require("mongoose")
 
 const MovieSchema = new mongoose.Schema({
-    _id: String,
+    id: String,
     title:String,
     releaseYear:Number,
-    genre:[{type:String,enum:["Romance","Drama","Action","Fantasy","Sports"]}],
+    genre:[{type:String,enum:["Romance","Drama","Action","Fantasy","Sports","Comedy","Musical"]}],
     director:String,
-    actors:[{type:String,enum:["Shah Rukh Khan","Kajol","Prabhas","Anushka Shetty","Aamir Khan","Gracy Singh","Salman Khan","Kareena Kapoor","Aamir Khan","Ranveer Singh","Alia Bhatt"]}],
+    actors:[{type:String,enum:["Anushka Sharma","Shah Rukh Khan","Kajol","Prabhas","Anushka Shetty","Aamir Khan","Gracy Singh","Salman Khan","Kareena Kapoor","Aamir Khan","Ranveer Singh","Alia Bhatt"]}],
     language:String,
     country:String,
     rating:Number,

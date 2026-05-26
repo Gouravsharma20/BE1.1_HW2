@@ -1,35 +1,41 @@
-require("dotenv").config()
-
-const {initializeDb} = require("./db/db.connect")
-
 const fs = require("fs")
-
-const MovieModel = require("./movieModel")
 
 const jsonData = fs.readFileSync('movies.json','utf-8')
 
 const movieData = JSON.parse(jsonData)
 
-async function seedData(){
-    await initializeDb()
+require("dotenv").config()
+
+const {initializeDb} = require("./db/db.connect")
+
+
+
+const MovieModel = require("./movieModel")
+
+
+
+
+
+
+
+function seedData(){
     try{
-        for(const movieData of moviesData) {
+        for(const movie of movieData) {
             const newMovie = new MovieModel({
-                title:movieData.title,
-                releaseYear:movieData.releaseYear,
-                genre:movieData.genre,
-                director:movieData.director,
-                actors:movieData.actors,
-                language:movieData.language,
-                country:movieData.country,
-                rating:movieData.rating,
-                plot:movieData.plot,
-                awards:movieData.awards,
-                posterUrl:movieData.posterUrl,
-                trailerUrl:movieData.trailerUrl,
+                title:movie.title,
+                releaseYear:movie.releaseYear,
+                genre:movie.genre,
+                director:movie.director,
+                actors:movie.actors,
+                language:movie.language,
+                country:movie.country,
+                rating:movie.rating,
+                plot:movie.plot,
+                awards:movie.awards,
+                posterUrl:movie.posterUrl,
+                trailerUrl:movie.trailerUrl,
             })
-            await newMovie.save()
-            console.log(newMovie.title)
+            newMovie.save()
         }
 
     } catch (error) {
@@ -37,5 +43,7 @@ async function seedData(){
 
     }
 }
+
+initializeDb()
 
 seedData()
