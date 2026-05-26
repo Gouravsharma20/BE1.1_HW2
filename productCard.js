@@ -5,7 +5,7 @@ const OrderData = new mongoose.Schema({
     prodRating:Number,
     prodPrice:Number,
     availableOffers:{type:String,enum:["5% cashbak","12.5% off"]},
-    warrentyTerms: String,
+    warrantyTerms: String,
     varient:{type:String,enum:["2023 Model 1 Ton","2024 model 1.5 ton"]}
 })
 
